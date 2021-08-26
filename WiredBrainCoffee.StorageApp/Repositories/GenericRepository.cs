@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class GenericRepository<T>
+    public class GenericRepository<T> where T: EntityBase
     {
+          
+        private readonly List<T> _items = new ();// shorthand for new List<T>()
 
-        protected readonly List<T> _items = new ();// shorthand for new List<Employee>()
+        //methods
 
-        //methods 
+        public T GetById(int id)
+        {
+            return _items.Single(item => item.Id == id);
+        }
+
         public void Add(T item)
         {
             _items.Add(item);

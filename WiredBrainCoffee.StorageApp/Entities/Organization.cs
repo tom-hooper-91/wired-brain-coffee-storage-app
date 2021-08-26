@@ -1,9 +1,8 @@
 ﻿namespace WiredBrainCoffee.StorageApp.Entities
 {
-    public class Organization
+    public class Organization : EntityBase
     {
         //properties
-        public int Id { get; set; }
         public string? Name { get; set; }
 
         //methods
