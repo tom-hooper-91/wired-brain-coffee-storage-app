@@ -11,6 +11,10 @@ namespace WiredBrainCoffee.StorageApp.Repositories
         private readonly List<T> _items = new ();// shorthand for new List<T>()
 
         //methods
+        public IEnumerable<T> GetAll()
+        {
+            return _items.ToList();//returns a copy rather than the original data
+        }
 
         public T GetById(int id)
         {
@@ -35,6 +39,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
                 Console.WriteLine(item);
             }
         }
+
     }
 
 }

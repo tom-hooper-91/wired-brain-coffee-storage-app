@@ -19,10 +19,24 @@ namespace WiredBrainCoffee.StorageApp
 
             Console.WriteLine("-----");
 
+            WriteAllToConsole(employeeRepository);
+
+            Console.WriteLine("-----");
+
             var organizationRepository = new ListRepository<Organization>();
             AddOrganizations(organizationRepository);
 
             Console.ReadLine();
+        }
+
+        private static void WriteAllToConsole(IRepository<Employee> employeeRepository)
+        {
+            var items = employeeRepository.GetAll();
+
+            foreach(var item in items)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void GetEmployeeById(IRepository<Employee> employeeRepository)
