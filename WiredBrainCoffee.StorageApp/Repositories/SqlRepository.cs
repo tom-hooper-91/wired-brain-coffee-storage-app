@@ -5,10 +5,10 @@ using WiredBrainCoffee.StorageApp.Entities;
 
 namespace WiredBrainCoffee.StorageApp.Repositories
 {
-    public class GenericRepository<T> where T: class, IEntity
+    public class SqlRepository<T> where T : IEntity
     {
-          
-        private readonly List<T> _items = new ();// shorthand for new List<T>()
+
+        private readonly List<T> _items = new();// shorthand for new List<T>()
 
         //methods
 
@@ -36,4 +36,5 @@ namespace WiredBrainCoffee.StorageApp.Repositories
             }
         }
     }
+
 }

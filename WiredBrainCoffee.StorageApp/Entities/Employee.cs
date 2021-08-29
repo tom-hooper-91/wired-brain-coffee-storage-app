@@ -2,6 +2,7 @@
 {
     public class Employee : EntityBase
     {
+        //constructors
         //properties
         public string? FirstName { get; set; }
 
