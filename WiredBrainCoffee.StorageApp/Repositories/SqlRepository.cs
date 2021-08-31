@@ -19,7 +19,7 @@ namespace WiredBrainCoffee.StorageApp.Repositories
         //methods
         public IEnumerable<T> GetAll()
         {
-            return _dbSet.ToList();//returns a copy rather than the original data
+            return _dbSet.OrderBy(item => item.Id).ToList();//returns a copy rather than the original data
         }
 
         public T GetById(int id)

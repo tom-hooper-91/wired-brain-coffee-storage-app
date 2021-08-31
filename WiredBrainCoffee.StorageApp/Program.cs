@@ -35,7 +35,7 @@ namespace WiredBrainCoffee.StorageApp
             Console.ReadLine();
         }
 
-        private static void AddManager(IRepository<Manager> managerRepository)
+        private static void AddManager(IWriteRepository<Manager> managerRepository)
         {
             managerRepository.Add(new Manager { FirstName = "Sara" });
             managerRepository.Add(new Manager { FirstName = "Henry" });
